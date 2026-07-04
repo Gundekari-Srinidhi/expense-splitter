@@ -1,0 +1,111 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f8fafc;
+}
+
+.container{
+    width:500px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.container h1{
+    color:#7999cd;
+    margin-bottom:10px;
+}
+
+.container p{
+    color:#7999cd;
+    margin-bottom:25px;
+}
+
+.container p.error{
+    color:red;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+.error{
+    color:red !important;
+    font-weight:bold;
+}
+.error{
+    color:red;
+    font-weight:bold;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input{
+    padding:14px;
+    border:1px solid #dbe2ea;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+    transition:0.3s;
+}
+
+input:focus{
+    border-color:#7b9ec9;
+    box-shadow:0 0 8px rgba(96,165,250,0.3);
+}
+
+.login-btn{
+    background:#7999cd;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    background:#96afe5;
+}
+
+.google-btn{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:1px solid #dbe2ea;
+    background:#f8fafc;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.google-btn:hover{
+    background:#eef4ff;
+}
+
+.signup{
+    margin-top:20px;
+    color:#64748b;
+}
+
+.signup a{
+    text-decoration:none;
+    color:#7d9de1;
+    font-weight:600;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settlement Summary</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/settlement.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>💰 Settlement Summary</h1>
+        <p>Optimized payments to settle all debts.</p>
+    </div>
+
+    <div class="summary-card">
+
+        <h2>Total Expense</h2>
+
+        <p>
+            ₹{{ total }}
+        </p>
+
+    </div>
+
+    <h2>Settlement</h2>
+
+        {% if settlements %}
+
+            {% for s in settlements %}
+
+            <div class="summary-card">
+
+                <p>
+                    {{ s.from }} ➜ {{ s.to }}
+                </p>
+
+                <h3>₹{{ "%.2f"|format(s.amount) }}</h3>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+        <p>Everyone is settled 🎉</p>
+
+        {% endif %}
+
+    <div
+        class="settlement-list"
+        id="settlementContainer">
+
+    </div>
+
+    <div class="buttons">
+
+        <form
+            action="/settle/{{ id }}"
+            method="POST"
+            onsubmit="return confirm('This will clear all expenses. Continue?');">
+
+            <button
+                class="settle-btn"
+                type="submit">
+                Mark as Settled
+            </button>
+
+        </form>
+
+        <a href="/group/{{ id }}">
+            <button class="back-btn">
+                Back to Group
+            </button>
+        </a>
+            
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+:root{
+    --primary:#7999cd;
+    --primary-dark:#6688c2;
+    --background:#f8fafc;
+    --text-dark:#1e293b;
+    --text-light:#64748b;
+    --success:#22c55e;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:var(--background);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:750px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.header{
+    margin-bottom:30px;
+}
+
+.header h1{
+    color:var(--text-dark);
+    margin-bottom:8px;
+}
+
+.header p{
+    color:var(--text-light);
+}
+
+.settlement-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.settlement-card{
+    background:#f8fafc;
+    padding:20px;
+    border-radius:15px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.settlement-card h3{
+    color:var(--text-dark);
+    margin-bottom:5px;
+}
+
+.settlement-card p{
+    color:var(--text-light);
+}
+
+.settlement-card span{
+    font-size:22px;
+    font-weight:bold;
+    color:var(--success);
+}
+
+.buttons{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+}
+
+.settle-btn{
+    flex:1;
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.settle-btn:hover{
+    background:var(--primary-dark);
+}
+
+.back-btn{
+    flex:1;
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+}

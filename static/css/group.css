@@ -1,0 +1,192 @@
+:root{
+    --primary:#7999cd;
+    --primary-dark:#6688c2;
+    --background:#f8fafc;
+    --card:#ffffff;
+    --text-dark:#1e293b;
+    --text-light:#64748b;
+}
+.edit-btn{
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    background: #7999cd;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+.back-btn{
+    background:#7999cd;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:15px;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#7999cd;
+}
+.delete-expense-btn{
+    margin-top:10px;
+    padding:8px 14px;
+
+    background:#e74c3c;
+    color:white;
+
+    border:none;
+    border-radius:6px;
+
+    cursor:pointer;
+}
+
+.delete-expense-btn:hover{
+    background:#c0392b;
+}
+
+.delete-btn{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#e53935;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.delete-btn:hover{
+    background:#c62828;
+}
+
+.edit-btn:hover{
+    background: #7999cd;
+    transform: translateY(-2px);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:var(--background);
+    padding:40px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.group-header{
+    margin-bottom:30px;
+}
+
+.group-header h1{
+    color:var(--text-dark);
+    margin-bottom:10px;
+}
+
+.group-header p{
+    color:var(--text-light);
+}
+
+.members-card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    margin-bottom:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+.members{
+    margin-top:15px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.member{
+    background:#eef2fb;
+    color:#4b5f8f;
+    padding:10px 15px;
+    border-radius:10px;
+}
+
+.add-expense-btn{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:14px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    margin-bottom:25px;
+}
+
+.add-expense-btn:hover{
+    background:var(--primary-dark);
+}
+
+.expenses-section h2{
+    margin-bottom:20px;
+}
+
+.expense-card{
+    background:white;
+    padding:20px;
+    border-radius:16px;
+    margin-bottom:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.expense-card p{
+    color:var(--text-light);
+    margin-top:5px;
+}
+
+.expense-card span{
+    color:var(--primary);
+    font-size:22px;
+    font-weight:bold;
+}
+
+.settlement-btn{
+    margin-top:20px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:14px 24px;
+    border-radius:12px;
+    cursor:pointer;
+}
+.delete-btn{
+    width:100%;
+    background:var(--primary);
+    color : white;
+    padding:14px 24px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Splitter Dashboard</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    
+
+    <!-- Navbar -->
+    <nav>
+
+        <div class="logo">
+            💰 Expense Splitter
+        </div>
+
+        <div class="profile">
+
+            👤 {{ user_name }}
+
+            <a href="/logout">
+                <button class="logout-btn">
+                    Logout
+                </button>
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="welcome">
+        <h1>Welcome Back 👋</h1>
+        <p>Manage your shared expenses easily.</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3>Total Groups</h3>
+            <p>{{ total_groups }}</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Total Expenses</h3>
+            <p>{{ total_expenses }}</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Total Amount</h3>
+            <p>₹{{ total_amount }}</p>
+        </div>
+
+    </div>
+
+    <div class="top-actions">
+
+        <a href="/create-group">
+            <button class="create-btn">
+                + Create Group
+            </button>
+        </a>
+
+        <div class="right-actions">
+
+            <input
+                type="text"
+                id="searchGroup"
+                placeholder="🔍 Search Groups">
+
+            <select id="sortGroups">
+
+                <option value="default">Sort By</option>
+                <option value="az">A → Z</option>
+                <option value="za">Z → A</option>
+                <option value="members">Most Members</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- Groups Section -->
+    <h2 class="group-heading">Your Groups</h2>
+
+   <div class="groups-container">
+
+        {% for group in groups %}
+
+        <div class="group-card group-item">
+
+            <h3 class="group-name">
+                👥 {{ group.name }}
+            </h3>
+
+            <div class="group-info">
+
+                <p class="member-count">
+                    {{ group.member_count }} Members
+                </p>
+
+                <p>
+                    {{ group.description }}
+                </p>
+
+            </div>
+
+            <a href="{{ url_for('group', id=group.id) }}">
+                <button class="open-btn">
+                    Open Group
+                </button>
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

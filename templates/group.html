@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Details</title>
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/group.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="group-header">
+        <h1>
+            🏖 {{ group.name }}
+        </h1>
+        <p>
+            {{ group.description }}
+        </p>
+    </div>
+
+    <div class="members-card">
+
+        <h2>Members</h2>
+
+        <div class="members">
+
+            {% for member in group.members %}
+
+            <div class="member">
+
+                👤 {{ member }}
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <a href="/add-expense/{{ id }}">
+        <button class="add-expense-btn">
+            + Add Expense
+        </button>
+    </a>
+    <a href="/edit-group/{{ id }}">
+        <button class="edit-btn">
+             Edit Group
+        </button>
+    </a>
+
+    <div class="expenses-section">
+
+    <h2>Expense History</h2>
+
+    <div>
+
+        {% if group.expenses %}
+
+            {% for expense in group.expenses %}
+
+            <div class="expense-card">
+
+                <h3>{{ expense.name }}</h3>
+
+                <p>
+                    Paid by {{ expense.paidBy }}
+                </p>
+
+                <span>
+                    ₹{{ expense.amount }}
+                </span>
+
+                <form
+                    action="/delete-expense/{{ id }}/{{ expense.id }}"
+                    method="POST"
+                    onsubmit="return confirm('Are you sure you want to delete this expense?');">
+
+                    <button
+                        type="submit"
+                        class="delete-expense-btn">
+                        🗑 Delete Expense
+                    </button>
+
+                </form>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>No expenses yet.</p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+    <a href="/settlement/{{ id }}">
+        <button class="settlement-btn">
+            View Settlement
+        </button>
+    </a>
+        
+   <form
+        action="/delete-group/{{ id }}"
+        method="POST"
+        onsubmit="return confirm('Delete this group permanently?');">
+
+        <button class="delete-btn">
+            Delete Group
+        </button>
+
+        
+
+    </form>
+    <a href="/dashboard">
+            <button class="back-btn">
+                ← Dashboard
+            </button>
+        </a>
+    </form>
+    
+
+
+</div>
+
+
+
+</body>
+</html>
