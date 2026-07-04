@@ -5,11 +5,14 @@ app = Flask(__name__)
 app.secret_key = "expense_splitter_secret_key"
 
 groups = []
+
+import os
+
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Srinidhi@17",
-    database="expense_splitter"
+    host=os.getenv("DB_HOST"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME")
 )
 
 cursor = db.cursor(dictionary=True)
