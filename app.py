@@ -1,15 +1,22 @@
 from flask import Flask, render_template, request, redirect, session
 import mysql.connector
 
+
 app = Flask(__name__)
 app.secret_key = "expense_splitter_secret_key"
 
 groups = []
 
+
 import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 db = mysql.connector.connect(
     host=os.getenv("DB_HOST"),
+    port=int(os.getenv("DB_PORT")),
     user=os.getenv("DB_USER"),
     password=os.getenv("DB_PASSWORD"),
     database=os.getenv("DB_NAME")
