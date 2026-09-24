@@ -5,7 +5,6 @@ import mysql.connector
 app = Flask(__name__)
 app.secret_key = "expense_splitter_secret_key"
 
-groups = []
 
 
 import os
