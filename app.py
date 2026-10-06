@@ -410,7 +410,7 @@ def add_expense(id):
                 )
             )
         
-            db.commit()
+        db.commit()
         if len(split_members) == 0:
             return "Please select at least one member to split the expense."
 
